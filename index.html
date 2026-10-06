@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,7 +28,7 @@
     <div class="attendance-tracker">
       <div class="attendance-header">
         <i class="fas fa-users"></i>
-        Attendance: <span id="attendeeCount">0</span>/50
+        Attendance: <span id="attendeeCount">0</span>/20
       </div>
       <div class="progress-container">
         <div id="progressBar" class="progress-bar"></div>
@@ -37,6 +37,19 @@
     <div class="container">
       <!-- Feedback message -->
       <p id="greeting"></p>
+
+      <!-- Celebration banner -->
+      <div id="celebrationBanner" class="celebration-banner" aria-live="polite">
+        <div class="celebration-content">
+          <span class="balloon balloon-one"></span>
+          <span class="balloon balloon-two"></span>
+          <span class="balloon balloon-three"></span>
+          <p id="celebrationText">🎉 Goal reached!</p>
+          <span class="balloon balloon-four"></span>
+          <span class="balloon balloon-five"></span>
+          <span class="balloon balloon-six"></span>
+        </div>
+      </div>
 
       <!-- Check-in form -->
       <form class="check-in" id="checkInForm">
@@ -80,6 +93,16 @@
             <span class="team-count" id="powerCount">0</span>
           </div>
         </div>
+      </div>
+
+      <div class="attendee-list-section">
+        <div class="attendee-list-header">
+          <h3>Attendee List</h3>
+          <button type="button" id="attendeeListToggle" class="toggle-btn">
+            Show List
+          </button>
+        </div>
+        <ul id="attendeeList" class="attendee-list hidden"></ul>
       </div>
     </div>
 

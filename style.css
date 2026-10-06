@@ -25,7 +25,8 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(0, 153, 219, 0.9) 0%,
       rgba(0, 104, 181, 0.9) 50%,
@@ -256,6 +257,172 @@ button .fas {
 .success-message {
   background-color: #e8f4fc;
   color: #003c71;
+}
+
+.celebration-banner {
+  display: none;
+  margin-bottom: 20px;
+  padding: 18px 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff8d8, #ffe6f0);
+  border: 2px solid #f9d76b;
+  box-shadow: 0 10px 25px rgba(241, 196, 15, 0.18);
+}
+
+.celebration-banner.show {
+  display: block;
+  animation: celebrate 0.5s ease-in-out;
+}
+
+.celebration-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+
+#celebrationText {
+  font-size: 22px;
+  font-weight: 700;
+  color: #7a3f00;
+  text-align: center;
+  z-index: 2;
+}
+
+.balloon {
+  position: absolute;
+  width: 18px;
+  height: 24px;
+  border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+  top: 5px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.15);
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.balloon-one {
+  left: 12%;
+  background: #ff6b6b;
+}
+
+.balloon-two {
+  left: 28%;
+  background: #ffd166;
+  animation-delay: 0.4s;
+}
+
+.balloon-three {
+  left: 44%;
+  background: #6bdcff;
+  animation-delay: 0.8s;
+}
+
+.balloon-four {
+  right: 44%;
+  background: #7bd389;
+  animation-delay: 1.2s;
+}
+
+.balloon-five {
+  right: 28%;
+  background: #f08ae6;
+  animation-delay: 1.6s;
+}
+
+.balloon-six {
+  right: 12%;
+  background: #ff9f1c;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes celebrate {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.attendee-list-section {
+  margin-top: 30px;
+  border-top: 2px solid #f1f5f9;
+  padding-top: 20px;
+}
+
+.attendee-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.attendee-list-header h3 {
+  color: #64748b;
+  font-size: 16px;
+}
+
+.toggle-btn {
+  min-width: 120px;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+  background-color: #e2e8f0;
+  color: #1e293b;
+  box-shadow: none;
+}
+
+.toggle-btn:hover {
+  background-color: #cbd5e1;
+  transform: none;
+}
+
+.attendee-list {
+  list-style: none;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: left;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.attendee-list.hidden {
+  display: none;
+}
+
+.attendee-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 15px;
+}
+
+.attendee-list li:last-child {
+  border-bottom: none;
 }
 
 /* Counter */
